@@ -1,38 +1,199 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #1d1d1f;
+  background-color: #fbfbfd;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(251, 251, 253, 0.8);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #1d1d1f;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0066cc;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #000033, #0066cc);
+  color: white;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #fff, #e6e6e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+.prospects-grid {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 2rem;
+}
+
+.prospects-grid h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.prospect-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.prospect-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.prospect-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
-.App-link {
-  color: #61dafb;
+.prospect-image {
+  height: 250px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.prospect-image.brooks-lee {
+  background-image: url('https://www.mlb.com/twins/news/twins-draft-brooks-lee-with-no-8-pick');
+}
+
+.prospect-image.walker-jenkins {
+  background-image: url('https://www.mlb.com/twins/news/walker-jenkins-twins-first-round-pick-2023');
+}
+
+.prospect-image.emmanuel-rodriguez {
+  background-image: url('https://www.mlb.com/twins/news/emmanuel-rodriguez-twins-top-prospects');
+}
+
+.prospect-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prospect-card .position {
+  color: #86868b;
+  margin-bottom: 0.5rem;
+}
+
+.prospect-card .rank {
+  color: #0066cc;
+  font-weight: 500;
+}
+
+.news-section {
+  background: #f5f5f7;
+  padding: 4rem 2rem;
+}
+
+.news-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.news-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.news-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #1d1d1f;
+}
+
+.news-card p {
+  color: #86868b;
+  line-height: 1.5;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: #1d1d1f;
+  color: #f5f5f7;
 }
